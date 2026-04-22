@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyJ Premium - SabouServices</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --myj-gold: #D4AF37;
+            --myj-dark: #1a1a1a;
+            --myj-green: #00703c;
+            --myj-cream: #fbfbf8;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: var(--myj-cream); color: var(--myj-dark); overflow-x: hidden; scroll-behavior: smooth;}
+        
+        /* Navigation */
+        .navbar { background: rgba(26, 26, 26, 0.98); backdrop-filter: blur(10px); border-bottom: 2px solid var(--myj-gold); }
+        .navbar-brand { font-family: 'Playfair Display', serif; color: var(--myj-gold) !important; font-size: 1.8rem; line-height: 1; }
+        .navbar-brand small { font-family: 'Inter', sans-serif; color: white; font-size: 0.8rem; font-weight: 300; display: block; letter-spacing: 1px;}
+        .nav-link { color: white !important; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
+
+        /* SECTION HERO */
+        .hero-luxe {
+            position: relative;
+            background-color: var(--myj-dark);
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), url("palmeraie.jpeg");
+            background-position: center 30%;
+            background-size: cover;
+            padding: 120px 0;
+            border-bottom: 8px solid var(--myj-gold);
+        }
+        .hero-luxe h1 { font-family: 'Playfair Display', serif; font-size: 3.8rem; text-shadow: 0px 4px 15px rgba(0,0,0,0.8); }
+        .hero-brand-sub { font-family: 'Inter', sans-serif; color: var(--myj-gold); font-size: 1.1rem; font-weight: 600; letter-spacing: 5px; text-transform: uppercase; }
+
+        /* SECTION HISTOIRE */
+        .story-section { padding: 100px 0; background: white; }
+        .accent-title { font-family: 'Playfair Display', serif; color: var(--myj-green); font-size: 2.8rem; }
+        .story-text { font-size: 1.15rem; line-height: 1.8; color: #444; }
+
+        /* QUALITÉ */
+        .guarantee-section { background-color: #f4f4f2; padding: 80px 0; border-top: 1px solid #eee; }
+        .guarantee-icon { font-size: 3.5rem; color: var(--myj-gold); margin-bottom: 20px; display: block; }
+        .guarantee-title { font-weight: 600; margin-bottom: 10px; color: var(--myj-dark); }
+
+        /* PRODUITS */
+        .product-card-luxe { border: none; border-radius: 20px; background: white; transition: 0.4s; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.05); }
+        .card-header-custom { background: var(--myj-dark); color: var(--myj-gold); padding: 15px; font-weight: 700; text-transform: uppercase; }
+        
+        /* TABLEAU ACIA */
+        .nutrition-table {
+            border: 2px solid black; padding: 12px; background: white; color: black;
+            max-width: 280px; margin: 0 auto; line-height: 1.2; text-align: left;
+        }
+        .nutri-title { font-size: 1.5rem; border-bottom: 12px solid black; font-weight: 900; text-transform: uppercase; }
+        .nutri-line { border-bottom: 1px solid black; display: flex; justify-content: space-between; padding: 5px 0; font-size: 0.9rem; }
+
+        /* FORMULAIRE DE COMMANDE */
+        .order-container { background: white; border-radius: 20px; padding: 40px; border-top: 5px solid var(--myj-gold); color: #333; }
+        .form-control { border-radius: 8px; border: 1px solid #ddd; padding: 12px; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">MYJ <small>by SabouServices</small></a>
+            <div class="collapse navbar-collapse justify-content-end">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="#histoire">Notre Mission</a>
+                    <a class="nav-link" href="#gamme">La Gamme</a>
+                    <a class="nav-link btn btn-outline-warning btn-sm text-warning ms-3 px-4 fw-bold" href="#commander">Commander</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-luxe text-center text-white">
+        <div class="container">
+            <span class="hero-brand-sub mb-3 d-block">L'Or Rouge de Sierra Leone</span>
+            <h1 class="display-2 mb-4">Pureté Artisanale & Éthique</h1>
+            <p class="lead fw-light mb-5 fs-4">L'huile de palme brute, du village directement à votre table au Canada.</p>
+            <a href="#gamme" class="btn btn-warning btn-lg rounded-pill px-5 py-3 fw-bold text-uppercase shadow">Découvrir les produits</a>
+        </div>
+    </header>
+
+    <section id="histoire" class="story-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0 text-center">
+                    <img src="palmeraie.jpeg" alt="Nature Sierra Leone" class="img-fluid rounded-4 shadow-lg" style="max-height: 450px; width: 100%; object-fit: cover;">
+                </div>
+                <div class="col-lg-6 ps-lg-5">
+                    <h2 class="accent-title mb-4">Une Mission, Un Soutien Direct</h2>
+                    <div class="story-text">
+                        <p>Depuis les terres fertiles de la <strong>Sierra Leone</strong>, SabouServices s'engage dans une démarche unique : nous achetons notre huile directement auprès des producteurs villageois pour soutenir l'économie locale sans intermédiaire.</p>
+                        <p>Notre huile MyJ est le fruit de ce respect de la terre. C'est une huile <strong>"Zéro Transformation"</strong> : nous nous occupons de l'embouteillage et de l'étiquetage avec une rigueur absolue, garantissant un produit brut, pur et riche en nutriments essentiels pour le marché canadien.</p>
+                        <p class="fw-bold text-success mt-4">SabouServices : Votre pont direct vers l'authenticité africaine.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="qualite" class="guarantee-section">
+        <div class="container">
+            <h2 class="text-center accent-title mb-5">Engagement Qualité</h2>
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <i class="bi bi-droplet-half guarantee-icon"></i>
+                    <h4 class="guarantee-title">100% Brute & Pure</h4>
+                    <p class="text-muted small">Sans additif ni mélange. L'huile dans sa forme la plus naturelle.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="bi bi-heart-pulse guarantee-icon"></i>
+                    <h4 class="guarantee-title">Riche en Nutriments</h4>
+                    <p class="text-muted small">Naturellement concentrée en Vitamine A et E pour votre santé.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="bi bi-clipboard-check guarantee-icon"></i>
+                    <h4 class="guarantee-title">Conformité ACIA</h4>
+                    <p class="text-muted small">Étiquetage bilingue certifié conforme aux normes canadiennes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gamme" class="py-5 bg-light">
+        <div class="container py-5">
+            <h2 class="text-center accent-title mb-5">Formats Disponibles</h2>
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-12 col-md-4"> 
+                    <div class="card product-card-luxe h-100 text-center shadow-sm">
+                        <div class="card-header-custom">FORMAT 200ml</div>
+                        <div class="card-body p-4">
+                            <div class="nutrition-table">
+                                <div class="nutri-title">Valeur nutritive</div>
+                                <div class="nutri-line"><b>Calories</b> 120</div>
+                                <div class="nutri-line"><b>Lipides</b> 14g (19%)</div>
+                                <div class="small mt-2 text-success">Disponible</div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0 pb-4">
+                            <a href="#commander" class="btn btn-dark rounded-pill px-5 fw-bold w-100">COMMANDER</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4"> 
+                    <div class="card product-card-luxe h-100 text-center shadow-sm">
+                        <div class="card-header-custom">FORMAT 1L</div>
+                        <div class="card-body p-4">
+                            <div class="nutrition-table">
+                                <div class="nutri-title">Valeur nutritive</div>
+                                <div class="nutri-line"><b>Calories</b> 120</div>
+                                <div class="nutri-line"><b>Lipides</b> 14g (19%)</div>
+                                <div class="small mt-2 text-success">Disponible</div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0 pb-4">
+                            <a href="#commander" class="btn btn-dark rounded-pill px-5 fw-bold w-100">COMMANDER</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4"> 
+                    <div class="card product-card-luxe h-100 text-center shadow-sm">
+                        <div class="card-header-custom">FORMAT 4L</div>
+                        <div class="card-body p-4">
+                            <div class="nutrition-table">
+                                <div class="nutri-title">Valeur nutritive</div>
+                                <div class="nutri-line"><b>Calories</b> 120</div>
+                                <div class="nutri-line"><b>Lipides</b> 14g (19%)</div>
+                                <div class="small mt-2 text-success">Disponible</div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0 pb-4">
+                            <a href="#commander" class="btn btn-dark rounded-pill px-5 fw-bold w-100">COMMANDER</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="commander" class="py-5" style="background-color: var(--myj-green);">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="order-container shadow-lg">
+                        <h2 class="text-center mb-4" style="color: var(--myj-green); font-family: 'Playfair Display';">Passer une Commande</h2>
+                        <p class="text-center text-muted mb-4">Sélectionnez vos produits et l'équipe de <strong>SabouServices</strong> vous recontactera avec une facture proforma.</p>
+                        
+                        <form action="https://formsubmit.co/sabou.services.gn@gmail.com" method="POST">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_subject" value="Nouveau message SabouServices">
+                            <input type="hidden" name="_next" value="https://votresite.com/index.html">
+
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Votre Nom</label>
+                                    <input type="text" name="nom" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" name="email" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Format souhaité</label>
+                                    <select name="format" class="form-select form-control">
+                                        <option value="500ml">Bouteille 500ml</option>
+                                        <option value="1L" selected>Bouteille 1L</option>
+                                        <option value="4L">Bidon 4L</option>
+                                        <option value="Grossiste">Vrac / Grossiste</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Quantité</label>
+                                    <input type="number" name="quantite" class="form-control" value="1" min="1">
+                                </div>
+                                
+                                <div class="col-12">
+                                    <label class="form-label">Adresse de livraison complète</label>
+                                    <input type="text" name="adresse" class="form-control" placeholder="Rue, Ville, Province, Code Postal" required>
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label">Commentaires ou instructions</label>
+                                    <textarea name="commentaires" class="form-control" rows="3" placeholder="Précisez ici vos demandes particulières..."></textarea>
+                                </div>
+
+                                <div class="col-12 mt-4">
+                                    <button type="submit" class="btn btn-success btn-lg w-100 fw-bold shadow-sm" style="background-color: var(--myj-green); border:none;">ENVOYER LA DEMANDE</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-4 text-muted bg-white border-top">
+        <small>© 2026 SabouServices - Importateur Officiel MyJ Premium</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
