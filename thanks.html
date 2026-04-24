@@ -25,6 +25,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 0;
         }
 
         .thank-you-card {
@@ -35,6 +36,7 @@
             box-shadow: 0 15px 40px rgba(0,0,0,0.1);
             max-width: 600px;
             border-top: 6px solid var(--myj-gold);
+            margin: 20px;
         }
 
         .check-icon {
@@ -52,7 +54,7 @@
         .steps-box {
             background: var(--myj-cream);
             border-radius: 15px;
-            padding: 20px;
+            padding: 25px;
             margin: 30px 0;
             text-align: left;
         }
@@ -63,6 +65,8 @@
             gap: 15px;
             margin-bottom: 15px;
         }
+
+        .step-item:last-child { margin-bottom: 0; }
 
         .step-number {
             background: var(--myj-green);
@@ -85,6 +89,7 @@
             padding: 12px 35px;
             text-decoration: none;
             font-weight: 600;
+            display: inline-block;
             transition: 0.3s;
         }
 
@@ -92,6 +97,14 @@
             background: var(--myj-green);
             color: white;
         }
+
+        .contact-link {
+            color: var(--myj-gold);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .contact-link:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -106,27 +119,30 @@
                 <div class="step-item">
                     <div class="step-number">1</div>
                     <div>
-                        <strong>Confirmation par courriel</strong>
-                        <p class="small mb-0 text-muted">Vous allez recevoir un récapitulatif automatique de votre demande.</p>
+                        <strong>Confirmation</strong>
+                        <p class="small mb-0 text-muted">Votre demande nous a été transmise avec succès.</p>
                     </div>
                 </div>
                 <div class="step-item">
                     <div class="step-number">2</div>
                     <div>
                         <strong>Prise de contact</strong>
-                        <p class="small mb-0 text-muted">Un conseiller SabouServices vous contactera sous 24h pour finaliser le paiement et la livraison.</p>
+                        <p class="small mb-0 text-muted">Un conseiller SabouServices vous contactera sous peu pour valider la livraison.</p>
                     </div>
                 </div>
                 <div class="step-item">
                     <div class="step-number">3</div>
                     <div>
                         <strong>Expédition</strong>
-                        <p class="small mb-0 text-muted">Votre colis sera préparé avec soin et expédié à votre adresse au Canada.</p>
+                        <p class="small mb-0 text-muted">Votre commande sera expédiée rapidement partout au Canada.</p>
                     </div>
                 </div>
             </div>
 
-            <p class="mb-4">Une question urgente ? <br> <a href="contact@sabouservices.com" class="text-decoration-none" style="color: var(--myj-gold);">Contactez-nous directement</a></p>
+            <p class="mb-4">
+                Une question ? Écrivez-nous à :<br> 
+                <a href="mailto:contact@sabouservices.com" class="contact-link">contact@sabouservices.com</a>
+            </p>
 
             <a href="index.html" class="btn-return shadow-sm">Retourner à l'accueil</a>
         </div>
