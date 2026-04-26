@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" id="html-root">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +9,7 @@
     <meta name="keywords" content="huile de palme brute, huile de palme naturelle, huile de palme Canada, MyJ Premium, SabouServices, huile de palme rouge, Sierra Leone, commerce équitable">
     <meta name="author" content="SabouServices">
     <meta name="robots" content="index, follow">
-
     <link rel="canonical" href="https://www.sabouservices.com/">
-
     <meta property="og:type" content="website">
     <meta property="og:locale" content="fr_CA">
     <meta property="og:site_name" content="SabouServices – MyJ Premium">
@@ -24,24 +22,8 @@
     {
       "@context": "https://schema.org",
       "@graph": [
-        {
-          "@type": "Organization",
-          "name": "SabouServices",
-          "url": "https://www.sabouservices.com",
-          "logo": "https://www.sabouservices.com/palmeraie.jpeg",
-          "areaServed": "CA"
-        },
-        {
-          "@type": "Product",
-          "name": "Huile de Palme Brute Naturelle MyJ Premium",
-          "brand": { "@type": "Brand", "name": "MyJ Premium" },
-          "description": "Huile de palme brute 100% naturelle, sans additifs ni pesticides. Conforme ACIA.",
-          "offers": [
-            { "@type": "Offer", "name": "500ml", "priceCurrency": "CAD" },
-            { "@type": "Offer", "name": "1L", "priceCurrency": "CAD" },
-            { "@type": "Offer", "name": "4L", "priceCurrency": "CAD" }
-          ]
-        }
+        { "@type": "Organization", "name": "SabouServices", "url": "https://www.sabouservices.com", "logo": "https://www.sabouservices.com/palmeraie.jpeg", "areaServed": "CA" },
+        { "@type": "Product", "name": "Huile de Palme Brute Naturelle MyJ Premium", "brand": { "@type": "Brand", "name": "MyJ Premium" }, "description": "Huile de palme brute 100% naturelle, sans additifs ni pesticides. Conforme ACIA.", "offers": [{ "@type": "Offer", "name": "500ml", "priceCurrency": "CAD" }, { "@type": "Offer", "name": "1L", "priceCurrency": "CAD" }, { "@type": "Offer", "name": "4L", "priceCurrency": "CAD" }] }
       ]
     }
     </script>
@@ -52,23 +34,11 @@
 
     <style>
         :root {
-            --myj-gold:        #C9A84C;
-            --myj-dark:        #1e1e1e;
-            --myj-green:       #2d6a4f;
-            --myj-green-light: #40916c;
-            --myj-green-pale:  #d8f3dc;
-            --myj-cream:       #f9f6f0;
-            --myj-leaf:        #52b788;
+            --myj-gold: #C9A84C; --myj-dark: #1e1e1e; --myj-green: #2d6a4f;
+            --myj-green-pale: #d8f3dc; --myj-cream: #f9f6f0; --myj-leaf: #52b788;
         }
-
         * { box-sizing: border-box; }
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background-color: var(--myj-cream);
-            color: var(--myj-dark);
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
+        body { font-family: 'DM Sans', sans-serif; background-color: var(--myj-cream); color: var(--myj-dark); overflow-x: hidden; scroll-behavior: smooth; }
 
         /* NAVIGATION */
         .navbar { background: rgba(30,30,30,0.97); backdrop-filter: blur(12px); border-bottom: 2px solid var(--myj-gold); }
@@ -76,8 +46,19 @@
         .navbar-brand small { font-family: 'DM Sans', sans-serif; color: rgba(255,255,255,0.65); font-size: 0.72rem; font-weight: 300; display: block; letter-spacing: 2px; }
         .nav-link { color: white !important; text-transform: uppercase; font-size: 0.82rem; letter-spacing: 1px; }
 
-        /* BADGE BIO */
-        .bio-badge {
+        /* BOUTON LANGUE */
+        .lang-btn {
+            background: transparent;
+            border: 1.5px solid var(--myj-gold);
+            color: var(--myj-gold) !important;
+            font-weight: 700; font-size: 0.82rem; letter-spacing: 1px;
+            text-transform: uppercase; padding: 4px 12px; border-radius: 6px;
+            cursor: pointer; transition: 0.2s; line-height: 1.5;
+        }
+        .lang-btn:hover { background: var(--myj-gold); color: var(--myj-dark) !important; }
+
+        /* BADGE */
+        .nature-badge {
             display: inline-flex; align-items: center; gap: 6px;
             background: var(--myj-green); color: white;
             font-size: 0.78rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
@@ -86,49 +67,33 @@
 
         /* HERO */
         .hero-luxe {
-            position: relative;
-            background-color: var(--myj-dark);
+            position: relative; background-color: var(--myj-dark);
             background-image: linear-gradient(160deg, rgba(0,0,0,0.55) 0%, rgba(45,106,79,0.45) 100%), url("palmeraie.jpeg");
-            background-position: center 30%;
-            background-size: cover;
-            padding: 130px 0 110px;
-            border-bottom: 6px solid var(--myj-gold);
+            background-position: center 30%; background-size: cover;
+            padding: 130px 0 110px; border-bottom: 6px solid var(--myj-gold);
         }
         .hero-luxe h1 { font-family: 'Playfair Display', serif; font-size: 3.6rem; text-shadow: 0 4px 20px rgba(0,0,0,0.7); line-height: 1.15; }
-        .hero-brand-sub { font-family: 'DM Sans', sans-serif; color: var(--myj-gold); font-size: 0.95rem; font-weight: 600; letter-spacing: 5px; text-transform: uppercase; }
-        .hero-pill { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); color: white; font-size: 0.82rem; padding: 6px 16px; border-radius: 50px; backdrop-filter: blur(4px); display: inline-block; margin: 4px; }
+        .hero-brand-sub { color: var(--myj-gold); font-size: 0.95rem; font-weight: 600; letter-spacing: 5px; text-transform: uppercase; }
+        .hero-pill { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); color: white; font-size: 0.82rem; padding: 6px 16px; border-radius: 50px; display: inline-block; margin: 4px; }
         .hero-pill.green { background: rgba(82,183,136,0.25); border-color: var(--myj-leaf); color: #b7e4c7; }
 
-        /* BANDEAU BIO */
-        .bio-strip { background: var(--myj-green); color: white; padding: 13px 0; text-align: center; font-size: 0.88rem; letter-spacing: 0.5px; }
+        /* BANDEAU */
+        .bio-strip { background: var(--myj-green); color: white; padding: 13px 0; text-align: center; font-size: 0.88rem; }
         .bio-strip strong { color: #b7e4c7; }
 
-        /* HISTOIRE */
+        /* SECTIONS */
         .story-section { padding: 100px 0; background: white; }
         .accent-title { font-family: 'Playfair Display', serif; color: var(--myj-green); font-size: 2.6rem; line-height: 1.2; }
         .story-text { font-size: 1.1rem; line-height: 1.85; color: #444; }
-        .bio-highlight {
-            background: var(--myj-green-pale); border-left: 4px solid var(--myj-leaf);
-            border-radius: 0 12px 12px 0; padding: 14px 18px; margin: 18px 0;
-            font-size: 0.95rem; color: var(--myj-green);
-        }
+        .highlight-box { background: var(--myj-green-pale); border-left: 4px solid var(--myj-leaf); border-radius: 0 12px 12px 0; padding: 14px 18px; margin: 18px 0; font-size: 0.95rem; color: var(--myj-green); }
 
         /* VALEURS */
-        .bio-values-section {
-            background: var(--myj-green); padding: 80px 0; position: relative; overflow: hidden;
-        }
-        .bio-values-section::before {
-            content:''; position:absolute; inset:0;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' opacity='0.06'%3E%3Ccircle cx='40' cy='40' r='30' fill='none' stroke='%23ffffff' stroke-width='1'/%3E%3C/svg%3E");
-        }
-        .bio-value-card {
-            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 18px; padding: 34px 20px; text-align: center; color: white; height: 100%; transition: 0.3s;
-        }
-        .bio-value-card:hover { background: rgba(255,255,255,0.18); transform: translateY(-4px); }
-        .bio-value-card .icon { font-size: 2.6rem; display: block; margin-bottom: 14px; }
-        .bio-value-card h3 { font-weight: 600; font-size: 1rem; margin-bottom: 8px; color: #b7e4c7; }
-        .bio-value-card p { font-size: 0.86rem; color: rgba(255,255,255,0.78); line-height: 1.6; margin: 0; }
+        .values-section { background: var(--myj-green); padding: 80px 0; position: relative; overflow: hidden; }
+        .value-card { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 18px; padding: 34px 20px; text-align: center; color: white; height: 100%; transition: 0.3s; }
+        .value-card:hover { background: rgba(255,255,255,0.18); transform: translateY(-4px); }
+        .value-card .icon { font-size: 2.6rem; display: block; margin-bottom: 14px; }
+        .value-card h3 { font-weight: 600; font-size: 1rem; margin-bottom: 8px; color: #b7e4c7; }
+        .value-card p { font-size: 0.86rem; color: rgba(255,255,255,0.78); line-height: 1.6; margin: 0; }
 
         /* QUALITÉ */
         .guarantee-section { background-color: var(--myj-cream); padding: 80px 0; border-top: 1px solid #e8e0d4; }
@@ -139,263 +104,436 @@
         .product-card-luxe { border: none; border-radius: 20px; background: white; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.07); transition: 0.35s; }
         .product-card-luxe:hover { transform: translateY(-6px); box-shadow: 0 20px 45px rgba(0,0,0,0.12); }
         .card-header-custom { background: var(--myj-dark); color: var(--myj-gold); padding: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-        .card-bio-tag {
-            display: inline-flex; align-items: center; gap: 5px;
-            background: var(--myj-green-pale); color: var(--myj-green);
-            font-size: 0.74rem; font-weight: 600; padding: 4px 12px;
-            border-radius: 50px; margin-bottom: 12px; border: 1px solid var(--myj-leaf);
-        }
+        .card-nature-tag { display: inline-flex; align-items: center; gap: 5px; background: var(--myj-green-pale); color: var(--myj-green); font-size: 0.74rem; font-weight: 600; padding: 4px 12px; border-radius: 50px; margin-bottom: 12px; border: 1px solid var(--myj-leaf); }
         .nutrition-table { border: 2px solid black; padding: 12px; background: white; color: black; max-width: 250px; margin: 0 auto; text-align: left; }
         .nutri-title { font-size: 1.35rem; border-bottom: 10px solid black; font-weight: 900; text-transform: uppercase; padding-bottom: 4px; margin-bottom: 4px; }
+        .nutri-sub { font-size: 0.74rem; color: #555; margin-bottom: 6px; }
         .nutri-line { border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; padding: 4px 0; font-size: 0.84rem; }
+        .nutri-line:last-child { border-bottom: none; }
 
         /* FORMULAIRE */
         .order-container { background: white; border-radius: 20px; padding: 44px; border-top: 5px solid var(--myj-gold); color: #333; }
-        .form-control, .form-select { border-radius: 8px; border: 1.5px solid #ddd; padding: 11px 14px; }
-        .form-label { font-weight: 600; font-size: 0.88rem; color: #555; }
+        .form-control, .form-select { border-radius: 8px; border: 1.5px solid #ddd; padding: 11px 14px; font-size: 0.95rem; transition: border-color 0.2s; }
+        .form-control:focus, .form-select:focus { border-color: var(--myj-leaf); box-shadow: 0 0 0 3px rgba(82,183,136,0.15); }
+        .form-label { font-weight: 600; font-size: 0.88rem; color: #555; margin-bottom: 6px; }
 
-        @media (max-width: 768px) {
-            .hero-luxe h1 { font-size: 2.4rem; }
-            .order-container { padding: 28px 18px; }
-        }
+        /* LANGUE — cacher/montrer */
+        [lang-fr], [lang-en] { display: none; }
+        .lang-fr [lang-fr] { display: revert; }
+        .lang-en [lang-en] { display: revert; }
+
+        /* éléments inline (span, em, b…) */
+        span[lang-fr], span[lang-en],
+        em[lang-fr], em[lang-en],
+        b[lang-fr], b[lang-en],
+        small[lang-fr], small[lang-en] { display: inline; }
+        .lang-fr span[lang-en], .lang-fr em[lang-en], .lang-fr b[lang-en], .lang-fr small[lang-en] { display: none; }
+        .lang-en span[lang-fr], .lang-en em[lang-fr], .lang-en b[lang-fr], .lang-en small[lang-fr] { display: none; }
+
+        @media (max-width: 768px) { .hero-luxe h1 { font-size: 2.4rem; } .order-container { padding: 28px 18px; } }
     </style>
 </head>
-<body>
+<!-- La classe lang-fr ou lang-en est ajoutée par JS sur body -->
+<body class="lang-fr">
 
     <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#">MYJ <small>by SabouServices</small></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navMenu">
                 <div class="navbar-nav gap-1 align-items-center">
-                    <a class="nav-link" href="#histoire">Notre Mission</a>
-                    <a class="nav-link" href="#bio">Nos Engagements</a>
-                    <a class="nav-link" href="#gamme">La Gamme</a>
-                    <a class="nav-link btn btn-outline-warning btn-sm text-warning ms-2 px-4 fw-bold" href="#commander">Commander</a>
-                    <a class="nav-link lang-switch ms-2 fw-bold"href="/index-en.html" hreflang="en"aria-label="Switch to English" style="color: var(--myj-gold) !important;">EN</a>   
+                    <a class="nav-link" href="#histoire">
+                        <span lang-fr>Notre Mission</span>
+                        <span lang-en>Our Mission</span>
+                    </a>
+                    <a class="nav-link" href="#valeurs">
+                        <span lang-fr>Nos Engagements</span>
+                        <span lang-en>Commitments</span>
+                    </a>
+                    <a class="nav-link" href="#gamme">
+                        <span lang-fr>La Gamme</span>
+                        <span lang-en>The Range</span>
+                    </a>
+                    <a class="nav-link btn btn-outline-warning btn-sm text-warning ms-2 px-4 fw-bold" href="#commander">
+                        <span lang-fr>Commander</span>
+                        <span lang-en>Order Now</span>
+                    </a>
+                    <!-- ✅ BOUTON LANGUE — bascule FR/EN sans changer de page -->
+                    <button class="lang-btn ms-2" id="langToggle" onclick="toggleLang()" aria-label="Switch language">
+                        <span lang-fr>EN</span>
+                        <span lang-en>FR</span>
+                    </button>
                 </div>
             </div>
         </div>
     </nav>
 
     <main>
+
+        <!-- HERO -->
         <header class="hero-luxe text-center text-white">
-            <div class="container position-relative">
-                <span class="bio-badge mb-3 d-inline-block">🌿 Traditionnel · Brut · Éthique</span>
+            <div class="container">
+                <span class="nature-badge mb-3 d-inline-block">
+                    <span lang-fr>🌿 Traditionnel · Brut · Durable</span>
+                    <span lang-en>🌿 Traditional · Crude · Sustainable</span>
+                </span>
                 <br><br>
-                <span class="hero-brand-sub mb-3 d-block">L'Or Rouge de Sierra Leone</span>
+                <span class="hero-brand-sub mb-3 d-block">
+                    <span lang-fr>L'Or Rouge de Sierra Leone</span>
+                    <span lang-en>Sierra Leone's Red Gold</span>
+                </span>
                 <h1 class="display-2 mb-4">
-                    Huile de Palme Brute<br>
-                    <em style="font-style:italic; color:#b7e4c7;">Pureté Naturelle & Durable</em>
+                    <span lang-fr>Huile de Palme Brute<br><em style="font-style:italic; color:#b7e4c7;">Pureté Naturelle &amp; Durable</em></span>
+                    <span lang-en>Crude Palm Oil<br><em style="font-style:italic; color:#b7e4c7;">Natural Purity &amp; Sustainability</em></span>
                 </h1>
                 <p class="lead fw-light mb-4 fs-5" style="max-width:600px; margin:0 auto;">
-                    Directement des villages de Sierra Leone à votre table au Canada — une huile brute, sans pesticides et sans transformation.
+                    <span lang-fr>Directement des villages de Sierra Leone à votre table au Canada — une huile brute, sans pesticides et sans transformation.</span>
+                    <span lang-en>Directly from Sierra Leone villages to your table in Canada — crude, pesticide-free, and unprocessed.</span>
                 </p>
                 <div class="mt-2 mb-4">
-                    <span class="hero-pill green">🌱 Sans pesticides</span>
-                    <span class="hero-pill green">🍃 Zéro transformation</span>
-                    <span class="hero-pill green">♻️ Économie Sociale</span>
-                    <span class="hero-pill">✅ Conforme ACIA</span>
+                    <span class="hero-pill green" lang-fr>🌱 Sans pesticides</span>
+                    <span class="hero-pill green" lang-en>🌱 Pesticide-free</span>
+                    <span class="hero-pill green" lang-fr>🍃 Zéro transformation</span>
+                    <span class="hero-pill green" lang-en>🍃 Zero processing</span>
+                    <span class="hero-pill green" lang-fr>♻️ Économie Sociale</span>
+                    <span class="hero-pill green" lang-en>♻️ Social Economy</span>
+                    <span class="hero-pill">✅ <span lang-fr>Conforme ACIA</span><span lang-en>CFIA Compliant</span></span>
                 </div>
                 <div class="mt-4 d-flex flex-wrap justify-content-center gap-3">
-                    <a href="#gamme" class="btn btn-warning btn-lg rounded-pill px-5 py-3 fw-bold text-uppercase shadow">Voir les produits</a>
+                    <a href="#gamme" class="btn btn-warning btn-lg rounded-pill px-5 py-3 fw-bold text-uppercase shadow">
+                        <span lang-fr>Voir les produits</span>
+                        <span lang-en>View Products</span>
+                    </a>
+                    <a href="#valeurs" class="btn btn-outline-light btn-lg rounded-pill px-4 py-3 text-uppercase">
+                        <span lang-fr>Nos engagements</span>
+                        <span lang-en>Our Commitments</span>
+                    </a>
                 </div>
             </div>
         </header>
 
+        <!-- BANDEAU -->
         <div class="bio-strip">
-            🌿 <strong>Cultures traditionnelles sans engrais chimiques</strong> — Soutien direct aux producteurs villageois &nbsp;|&nbsp; 🤝 <strong>Impact Local Garanti</strong>
+            <span lang-fr>🌿 <strong>Cultures traditionnelles sans engrais chimiques</strong> — Soutien direct aux producteurs villageois &nbsp;|&nbsp; 🤝 <strong>Impact Local Garanti</strong></span>
+            <span lang-en>🌿 <strong>Traditional crops without chemical fertilizers</strong> — Direct support to village producers &nbsp;|&nbsp; 🤝 <strong>Guaranteed Local Impact</strong></span>
         </div>
 
+        <!-- HISTOIRE -->
         <section id="histoire" class="story-section">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 mb-5 mb-lg-0 text-center">
-                        <img src="palmeraie.jpeg" alt="Palmeraie MyJ" class="img-fluid rounded-4 shadow-lg" style="max-height: 460px; width: 100%; object-fit: cover;">
+                        <img src="palmeraie.jpeg"
+                             alt="Palmeraie naturelle en Sierra Leone – source de l'huile de palme brute naturelle MyJ Premium"
+                             class="img-fluid rounded-4 shadow-lg"
+                             style="max-height: 460px; width: 100%; object-fit: cover;"
+                             width="600" height="460" loading="lazy">
                     </div>
                     <div class="col-lg-6 ps-lg-5">
-                        <h2 class="accent-title mb-4">Une Mission, Un Soutien Direct</h2>
+                        <h2 class="accent-title mb-4">
+                            <span lang-fr>Une Mission, Un Soutien Direct</span>
+                            <span lang-en>One Mission, Direct Support</span>
+                        </h2>
                         <div class="story-text">
-                            <p>Depuis les terres fertiles de la <strong>Sierra Leone</strong>, SabouServices soutient l'économie locale. Nous achetons notre huile directement auprès des producteurs pour garantir une fraîcheur et une authenticité inégalées.</p>
-                            <div class="bio-highlight">
+                            <p>
+                                <span lang-fr>Depuis les terres fertiles de la <strong>Sierra Leone</strong>, SabouServices soutient l'économie locale. Nous achetons notre huile directement auprès des producteurs pour garantir une fraîcheur et une authenticité inégalées.</span>
+                                <span lang-en>From the fertile lands of <strong>Sierra Leone</strong>, SabouServices supports the local economy. We buy our oil directly from producers to ensure unmatched freshness and authenticity.</span>
+                            </p>
+                            <div class="highlight-box">
                                 <i class="bi bi-leaf-fill me-2"></i>
-                                <strong>Naturellement riche</strong> — Nos palmiers poussent sans intrants chimiques. La terre offre une huile pure, riche en Vitamines A et E.
+                                <span lang-fr><strong>Naturellement riche</strong> — Nos palmiers poussent sans intrants chimiques. La terre offre une huile pure, riche en Vitamines A et E.</span>
+                                <span lang-en><strong>Naturally Rich</strong> — Our palm trees grow without chemical inputs. The earth provides a pure oil, rich in Vitamins A and E.</span>
                             </div>
-                            <p>L'huile <strong>MyJ</strong> est un produit <strong>"Zéro Transformation"</strong>. Nous assurons un embouteillage rigoureux au Canada pour préserver les bienfaits du produit brut.</p>
+                            <p>
+                                <span lang-fr>L'huile <strong>MyJ</strong> est un produit <strong>"Zéro Transformation"</strong>. Nous assurons un embouteillage rigoureux au Canada pour préserver les bienfaits du produit brut.</span>
+                                <span lang-en><strong>MyJ</strong> oil is a <strong>"Zero Processing"</strong> product. We ensure rigorous bottling in Canada to preserve every benefit of the raw product.</span>
+                            </p>
+                            <div class="highlight-box">
+                                <i class="bi bi-people-fill me-2"></i>
+                                <span lang-fr><strong>Impact direct</strong> — Chaque achat rémunère équitablement les familles productrices à la source.</span>
+                                <span lang-en><strong>Direct Impact</strong> — Every purchase fairly compensates producer families at the source.</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="bio" class="bio-values-section">
-            <div class="container text-white text-center">
-                <h2 class="mb-4" style="font-family:'Playfair Display',serif; font-size:2.5rem;">Nos Engagements Naturels</h2>
+        <!-- VALEURS -->
+        <section id="valeurs" class="values-section">
+            <div class="container text-white text-center position-relative">
+                <h2 class="mb-2" style="font-family:'Playfair Display',serif; font-size:2.5rem;">
+                    <span lang-fr>Nos Engagements Naturels</span>
+                    <span lang-en>Our Natural Commitments</span>
+                </h2>
+                <p class="mb-5" style="color:rgba(255,255,255,0.65); max-width:520px; margin:0 auto 3rem;">
+                    <span lang-fr>Chaque bouteille MyJ reflète notre respect de la nature, des hommes et de la terre.</span>
+                    <span lang-en>Every MyJ bottle reflects our deep respect for nature, people, and the land.</span>
+                </p>
                 <div class="row g-4 justify-content-center">
                     <div class="col-6 col-md-4 col-lg">
-                        <div class="bio-value-card">
+                        <div class="value-card">
                             <span class="icon">🌱</span>
-                            <h3>Sans Pesticides</h3>
-                            <p>Culture traditionnelle respectueuse de l'environnement.</p>
+                            <h3><span lang-fr>Sans Pesticides</span><span lang-en>Pesticide-Free</span></h3>
+                            <p><span lang-fr>Culture traditionnelle respectueuse de l'environnement.</span><span lang-en>Traditional farming free from synthetic chemicals.</span></p>
                         </div>
                     </div>
                     <div class="col-6 col-md-4 col-lg">
-                        <div class="bio-value-card">
+                        <div class="value-card">
                             <span class="icon">🍃</span>
-                            <h3>Non Raffinée</h3>
-                            <p>Aucun traitement industriel pour garder l'aspect brut.</p>
+                            <h3><span lang-fr>Non Raffinée</span><span lang-en>Unrefined</span></h3>
+                            <p><span lang-fr>Aucun traitement industriel pour garder l'aspect brut.</span><span lang-en>No industrial treatment to keep its raw state.</span></p>
                         </div>
                     </div>
                     <div class="col-6 col-md-4 col-lg">
-                        <div class="bio-value-card">
+                        <div class="value-card">
                             <span class="icon">🌍</span>
-                            <h3>Équitable</h3>
-                            <p>Rémunération juste reversée aux familles villageoises.</p>
+                            <h3><span lang-fr>Commerce Équitable</span><span lang-en>Fair Trade</span></h3>
+                            <p><span lang-fr>Rémunération juste reversée aux familles villageoises.</span><span lang-en>Fair prices paid directly to village families.</span></p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg">
+                        <div class="value-card">
+                            <span class="icon">💧</span>
+                            <h3><span lang-fr>Zéro Additif</span><span lang-en>Zero Additives</span></h3>
+                            <p><span lang-fr>Aucun conservateur, colorant ni exhausteur de goût.</span><span lang-en>No preservatives, colorings, or flavor enhancers.</span></p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg">
+                        <div class="value-card">
+                            <span class="icon">☀️</span>
+                            <h3><span lang-fr>Riche en Vitamines</span><span lang-en>Vitamin-Rich</span></h3>
+                            <p><span lang-fr>Vitamines A &amp; E naturellement préservées.</span><span lang-en>Vitamins A &amp; E naturally preserved and intact.</span></p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- QUALITÉ -->
         <section class="guarantee-section text-center">
             <div class="container">
-                <h2 class="accent-title mb-5">Engagement Qualité</h2>
+                <h2 class="accent-title mb-5">
+                    <span lang-fr>Engagement Qualité</span>
+                    <span lang-en>Quality Commitment</span>
+                </h2>
                 <div class="row g-4">
                     <div class="col-md-4">
                         <i class="bi bi-droplet-half guarantee-icon"></i>
-                        <h3 class="guarantee-title">100% Brute</h3>
-                        <p class="text-muted small">Aucun mélange, aucune dilution. Juste la plante.</p>
+                        <h3 class="guarantee-title"><span lang-fr>100% Brute</span><span lang-en>100% Crude</span></h3>
+                        <p class="text-muted small"><span lang-fr>Aucun mélange, aucune dilution. Juste la plante.</span><span lang-en>No mixing, no dilution. Just the plant.</span></p>
                     </div>
                     <div class="col-md-4">
                         <i class="bi bi-clipboard-check guarantee-icon"></i>
-                        <h3 class="guarantee-title">Conformité ACIA</h3>
-                        <p class="text-muted small">Étiquetage bilingue conforme aux normes canadiennes.</p>
+                        <h3 class="guarantee-title"><span lang-fr>Conformité ACIA</span><span lang-en>CFIA Compliant</span></h3>
+                        <p class="text-muted small"><span lang-fr>Étiquetage bilingue conforme aux normes canadiennes.</span><span lang-en>Bilingual labeling compliant with Canadian standards.</span></p>
                     </div>
                     <div class="col-md-4">
                         <i class="bi bi-heart-pulse guarantee-icon"></i>
-                        <h3 class="guarantee-title">Bien-être</h3>
-                        <p class="text-muted small">Source naturelle d'antioxydants puissants.</p>
+                        <h3 class="guarantee-title"><span lang-fr>Bien-être</span><span lang-en>Well-being</span></h3>
+                        <p class="text-muted small"><span lang-fr>Source naturelle d'antioxydants puissants.</span><span lang-en>Natural source of powerful antioxidants.</span></p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- GAMME -->
         <section id="gamme" class="py-5 bg-white">
             <div class="container py-5">
-                <h2 class="text-center accent-title mb-5">Formats Disponibles</h2>
+                <h2 class="text-center accent-title mb-2">
+                    <span lang-fr>Formats Disponibles</span>
+                    <span lang-en>Available Formats</span>
+                </h2>
+                <p class="text-center text-muted mb-5">
+                    <span lang-fr>Huile de palme brute naturelle — pour votre cuisine du quotidien</span>
+                    <span lang-en>Natural crude palm oil — for your everyday cooking</span>
+                </p>
                 <div class="row g-4 justify-content-center">
+
+                    <!-- 500ml -->
                     <div class="col-12 col-md-4">
                         <article class="card product-card-luxe h-100 text-center">
                             <div class="card-header-custom">FORMAT 500ml</div>
                             <div class="card-body p-4">
-                                <div class="card-bio-tag">🌿 100% Naturelle</div>
+                                <div class="card-nature-tag">🌿 <span lang-fr>100% Naturelle</span><span lang-en>100% Natural</span></div>
                                 <div class="nutrition-table">
-                                    <div class="nutri-title">Valeur nutritive</div>
-                                    <div class="nutri-line"><b>Calories</b> <span>120</span></div>
-                                    <div class="nutri-line"><b>Lipides</b> <span>14g (19%)</span></div>
-                                    <div class="nutri-line"><b>Vitamine A</b> <span>✓</span></div>
+                                    <div class="nutri-title"><span lang-fr>Valeur nutritive</span><span lang-en>Nutrition Facts</span></div>
+                                    <div class="nutri-sub"><span lang-fr>Pour 15 ml (1 c. à soupe)</span><span lang-en>Per 15 ml (1 tbsp)</span></div>
+                                    <div class="nutri-line"><b>Calories</b><span>120</span></div>
+                                    <div class="nutri-line"><b><span lang-fr>Lipides</span><span lang-en>Fat</span></b><span>14g (19%)</span></div>
+                                    <div class="nutri-line"><b>Vitamine A / Vitamin A</b><span>✓</span></div>
+                                    <div class="nutri-line"><b>Vitamine E / Vitamin E</b><span>✓</span></div>
                                 </div>
-                                <p class="small text-success mt-3 fw-semibold">✅ En stock</p>
+                                <p class="small text-success mt-3 mb-0 fw-semibold">✅ <span lang-fr>En stock</span><span lang-en>In Stock</span></p>
                             </div>
-                            <div class="card-footer bg-white border-0 pb-4"><a href="#commander" class="btn btn-dark rounded-pill w-100 fw-bold">COMMANDER</a></div>
+                            <div class="card-footer bg-white border-0 pb-4 px-4">
+                                <a href="#commander" class="btn btn-dark rounded-pill fw-bold w-100">
+                                    <span lang-fr>COMMANDER</span><span lang-en>ORDER</span>
+                                </a>
+                            </div>
                         </article>
                     </div>
+
+                    <!-- 1L -->
                     <div class="col-12 col-md-4">
                         <article class="card product-card-luxe h-100 text-center" style="border: 2px solid var(--myj-gold) !important;">
-                            <div class="card-header-custom" style="background: var(--myj-green);">1L · POPULAIRE</div>
-                            <div class="card-body p-4">
-                                <div class="card-bio-tag">🌿 100% Naturelle</div>
-                                <div class="nutrition-table">
-                                    <div class="nutri-title">Valeur nutritive</div>
-                                    <div class="nutri-line"><b>Calories</b> <span>120</span></div>
-                                    <div class="nutri-line"><b>Lipides</b> <span>14g (19%)</span></div>
-                                    <div class="nutri-line"><b>Vitamine A</b> <span>✓</span></div>
-                                </div>
-                                <p class="small text-success mt-3 fw-semibold">✅ En stock</p>
+                            <div class="card-header-custom" style="background: var(--myj-green);">
+                                1L · <span lang-fr>POPULAIRE</span><span lang-en>POPULAR</span> ⭐
                             </div>
-                            <div class="card-footer bg-white border-0 pb-4"><a href="#commander" class="btn rounded-pill w-100 fw-bold text-white" style="background: var(--myj-green);">COMMANDER</a></div>
+                            <div class="card-body p-4">
+                                <div class="card-nature-tag">🌿 <span lang-fr>100% Naturelle</span><span lang-en>100% Natural</span></div>
+                                <div class="nutrition-table">
+                                    <div class="nutri-title"><span lang-fr>Valeur nutritive</span><span lang-en>Nutrition Facts</span></div>
+                                    <div class="nutri-sub"><span lang-fr>Pour 15 ml (1 c. à soupe)</span><span lang-en>Per 15 ml (1 tbsp)</span></div>
+                                    <div class="nutri-line"><b>Calories</b><span>120</span></div>
+                                    <div class="nutri-line"><b><span lang-fr>Lipides</span><span lang-en>Fat</span></b><span>14g (19%)</span></div>
+                                    <div class="nutri-line"><b>Vitamine A / Vitamin A</b><span>✓</span></div>
+                                    <div class="nutri-line"><b>Vitamine E / Vitamin E</b><span>✓</span></div>
+                                </div>
+                                <p class="small text-success mt-3 mb-0 fw-semibold">✅ <span lang-fr>En stock</span><span lang-en>In Stock</span></p>
+                            </div>
+                            <div class="card-footer bg-white border-0 pb-4 px-4">
+                                <a href="#commander" class="btn rounded-pill fw-bold w-100 text-white" style="background: var(--myj-green);">
+                                    <span lang-fr>COMMANDER</span><span lang-en>ORDER</span>
+                                </a>
+                            </div>
                         </article>
                     </div>
+
+                    <!-- 4L -->
                     <div class="col-12 col-md-4">
                         <article class="card product-card-luxe h-100 text-center">
                             <div class="card-header-custom">FORMAT 4L</div>
                             <div class="card-body p-4">
-                                <div class="card-bio-tag">🌿 Format Familial</div>
+                                <div class="card-nature-tag">🌿 <span lang-fr>Format Familial</span><span lang-en>Family Size</span></div>
                                 <div class="nutrition-table">
-                                    <div class="nutri-title">Valeur nutritive</div>
-                                    <div class="nutri-line"><b>Calories</b> <span>120</span></div>
-                                    <div class="nutri-line"><b>Lipides</b> <span>14g (19%)</span></div>
-                                    <div class="nutri-line"><b>Vitamine A</b> <span>✓</span></div>
+                                    <div class="nutri-title"><span lang-fr>Valeur nutritive</span><span lang-en>Nutrition Facts</span></div>
+                                    <div class="nutri-sub"><span lang-fr>Pour 15 ml (1 c. à soupe)</span><span lang-en>Per 15 ml (1 tbsp)</span></div>
+                                    <div class="nutri-line"><b>Calories</b><span>120</span></div>
+                                    <div class="nutri-line"><b><span lang-fr>Lipides</span><span lang-en>Fat</span></b><span>14g (19%)</span></div>
+                                    <div class="nutri-line"><b>Vitamine A / Vitamin A</b><span>✓</span></div>
+                                    <div class="nutri-line"><b>Vitamine E / Vitamin E</b><span>✓</span></div>
                                 </div>
-                                <p class="small text-muted mt-3 fw-semibold">Idéal grossiste</p>
+                                <p class="small text-muted mt-3 mb-0 fw-semibold"><span lang-fr>Idéal grossiste</span><span lang-en>Ideal for Wholesale</span></p>
                             </div>
-                            <div class="card-footer bg-white border-0 pb-4"><a href="#commander" class="btn btn-dark rounded-pill w-100 fw-bold">DEVIS GROSSISTE</a></div>
+                            <div class="card-footer bg-white border-0 pb-4 px-4">
+                                <a href="#commander" class="btn btn-dark rounded-pill fw-bold w-100">
+                                    <span lang-fr>DEVIS GROSSISTE</span><span lang-en>WHOLESALE QUOTE</span>
+                                </a>
+                            </div>
                         </article>
                     </div>
+
                 </div>
             </div>
         </section>
 
+        <!-- FORMULAIRE -->
         <section id="commander" class="py-5" style="background: linear-gradient(135deg, var(--myj-green) 0%, #1b4332 100%);">
             <div class="container py-5">
                 <div class="row justify-content-center">
                     <div class="col-lg-7">
                         <div class="order-container shadow-lg">
-                            <h2 class="text-center mb-4" style="color: var(--myj-green); font-family: 'Playfair Display', serif;">Passer une Commande</h2>
-                            <form action="https://formsubmit.co/sabou.services.gn@gmail.com" method="POST">
-                                <input type="hidden" name="_subject" value="Nouvelle commande MyJ Premium">
-                                <input type="hidden" name="_next" value="https://www.sabouservices.com/thanks.html">
-                                <input type="hidden" name="_captcha" value="false">
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <label class="form-label">Votre Nom</label>
-                                        <input type="text" name="nom" class="form-control" required placeholder="Jean Dupont">
+                            <div class="text-center mb-4">
+                                <span class="nature-badge">🌿 <span lang-fr>Commande directe producteur</span><span lang-en>Direct from producer</span></span>
+                            </div>
+                            <h2 class="text-center mb-2" style="color: var(--myj-green); font-family: 'Playfair Display', serif;">
+                                <span lang-fr>Passer une Commande</span>
+                                <span lang-en>Place an Order</span>
+                            </h2>
+                            <p class="text-center text-muted mb-4 small">
+                                <span lang-fr>Sélectionnez vos produits et l'équipe de <strong>SabouServices</strong> vous recontactera avec une facture proforma.</span>
+                                <span lang-en>Select your products and the <strong>SabouServices</strong> team will contact you with a proforma invoice.</span>
+                            </p>
+
+                            <!-- FORMULAIRE FR -->
+                            <div lang-fr>
+                                <form action="https://formsubmit.co/sabou.services.gn@gmail.com" method="POST">
+                                    <input type="hidden" name="_subject" value="Nouvelle commande MyJ Premium">
+                                    <input type="hidden" name="_next" value="https://www.sabouservices.com/thanks.html">
+                                    <input type="hidden" name="_captcha" value="false">
+                                    <div class="row g-3">
+                                        <div class="col-md-6"><label class="form-label" for="nom">Votre Nom</label><input type="text" id="nom" name="nom" class="form-control" required placeholder="Jean Dupont" autocomplete="name"></div>
+                                        <div class="col-md-6"><label class="form-label" for="email-fr">Email</label><input type="email" id="email-fr" name="email" class="form-control" required placeholder="vous@email.com" autocomplete="email"></div>
+                                        <div class="col-md-6">
+                                            <label class="form-label" for="format-fr">Format souhaité</label>
+                                            <select id="format-fr" name="format" class="form-select">
+                                                <option value="500ml">🍶 Bouteille 500ml</option>
+                                                <option value="1L" selected>🍶 Bouteille 1L</option>
+                                                <option value="4L">🛢️ Bidon 4L</option>
+                                                <option value="Grossiste">📦 Vrac / Grossiste</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6"><label class="form-label" for="qte-fr">Quantité</label><input type="number" id="qte-fr" name="quantite" class="form-control" value="1" min="1"></div>
+                                        <div class="col-12"><label class="form-label" for="adresse-fr">Adresse de livraison au Canada</label><input type="text" id="adresse-fr" name="adresse" class="form-control" placeholder="Rue, Ville, Province, Code Postal" required autocomplete="street-address"></div>
+                                        <div class="col-12"><label class="form-label" for="comm-fr">Commentaires</label><textarea id="comm-fr" name="commentaires" class="form-control" rows="3" placeholder="Instructions spéciales..."></textarea></div>
+                                        <div class="col-12 mt-3"><button type="submit" class="btn btn-warning btn-lg w-100 fw-bold text-uppercase rounded-pill shadow">Confirmer ma demande</button></div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label">Email</label>
-                                        <input type="email" name="email" class="form-control" required placeholder="vous@email.com">
+                                </form>
+                            </div>
+
+                            <!-- FORMULAIRE EN -->
+                            <div lang-en>
+                                <form action="https://formsubmit.co/sabou.services.gn@gmail.com" method="POST">
+                                    <input type="hidden" name="_subject" value="New MyJ Premium Order">
+                                    <input type="hidden" name="_next" value="https://www.sabouservices.com/thanks-en.html">
+                                    <input type="hidden" name="_captcha" value="false">
+                                    <div class="row g-3">
+                                        <div class="col-md-6"><label class="form-label" for="name-en">Your Name</label><input type="text" id="name-en" name="name" class="form-control" required placeholder="John Doe" autocomplete="name"></div>
+                                        <div class="col-md-6"><label class="form-label" for="email-en">Email</label><input type="email" id="email-en" name="email" class="form-control" required placeholder="you@email.com" autocomplete="email"></div>
+                                        <div class="col-md-6">
+                                            <label class="form-label" for="format-en">Requested Format</label>
+                                            <select id="format-en" name="format" class="form-select">
+                                                <option value="500ml">🍶 500ml Bottle</option>
+                                                <option value="1L" selected>🍶 1L Bottle</option>
+                                                <option value="4L">🛢️ 4L Container</option>
+                                                <option value="Wholesale">📦 Bulk / Wholesale</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6"><label class="form-label" for="qty-en">Quantity</label><input type="number" id="qty-en" name="quantity" class="form-control" value="1" min="1"></div>
+                                        <div class="col-12"><label class="form-label" for="addr-en">Shipping Address in Canada</label><input type="text" id="addr-en" name="address" class="form-control" placeholder="Street, City, Province, Postal Code" required autocomplete="street-address"></div>
+                                        <div class="col-12"><label class="form-label" for="comm-en">Comments</label><textarea id="comm-en" name="comments" class="form-control" rows="3" placeholder="Special instructions..."></textarea></div>
+                                        <div class="col-12 mt-3"><button type="submit" class="btn btn-warning btn-lg w-100 fw-bold text-uppercase rounded-pill shadow">Confirm My Request</button></div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label">Format souhaité</label>
-                                        <select name="format" class="form-select">
-                                            <option value="500ml">Bouteille 500ml</option>
-                                            <option value="1L" selected>Bouteille 1L</option>
-                                            <option value="4L">Bidon 4L</option>
-                                            <option value="Grossiste">Vrac / Grossiste</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label class="form-label">Quantité</label>
-                                        <input type="number" name="quantite" class="form-control" value="1" min="1">
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label">Adresse de livraison au Canada</label>
-                                        <input type="text" name="adresse" class="form-control" placeholder="Rue, Ville, Province, Code Postal" required>
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label">Commentaires</label>
-                                        <textarea name="commentaires" class="form-control" rows="3" placeholder="Instructions spéciales..."></textarea>
-                                    </div>
-                                    <div class="col-12 mt-4">
-                                        <button type="submit" class="btn btn-warning btn-lg w-100 fw-bold text-uppercase rounded-pill shadow">Confirmer ma demande</button>
-                                    </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
 
-    <footer class="py-4 bg-dark text-white text-center">
-        <div class="container">
-            <p class="mb-0 small">© 2026 SabouServices Canada – MyJ Premium. Tous droits réservés.</p>
-        </div>
+    <footer class="py-4 text-center" style="background: var(--myj-dark); color: rgba(255,255,255,0.45);">
+        <small>© 2026 <strong style="color: var(--myj-gold);">SabouServices</strong> – <span lang-fr>Importateur Officiel</span><span lang-en>Official Importer</span> <strong style="color: var(--myj-gold);">MyJ Premium</strong> | <span lang-fr>Huile de palme brute naturelle de Sierra Leone</span><span lang-en>Natural Crude Palm Oil from Sierra Leone</span> | Canada</small>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // ── GESTION DE LA LANGUE ──────────────────────────────────────
+        // Lit la langue sauvegardée (ou FR par défaut)
+        const savedLang = localStorage.getItem('myj-lang') || 'fr';
+        setLang(savedLang);
+
+        function toggleLang() {
+            const current = document.body.classList.contains('lang-fr') ? 'fr' : 'en';
+            setLang(current === 'fr' ? 'en' : 'fr');
+        }
+
+        function setLang(lang) {
+            const body = document.body;
+            body.classList.remove('lang-fr', 'lang-en');
+            body.classList.add('lang-' + lang);
+            document.getElementById('html-root').setAttribute('lang', lang);
+            localStorage.setItem('myj-lang', lang);
+        }
+        // ──────────────────────────────────────────────────────────────
+    </script>
+
 </body>
 </html>
